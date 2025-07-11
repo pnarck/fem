@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+// Variables
+
+// Colors
+$color-primary-Cyan: hsl(179, 62%, 43%);
+$color-primary-Bright-Yellow: hsl(71, 73%, 54%);
+$color-neutral-Light-Gray: hsl(204, 43%, 93%);
+$color-neutral-Grayish-Blue: hsl(218, 22%, 67%);
+$color-mainBG: #fff;
+
+// Typography
+$font-size-default: 16px;
+$font-weight-default: 400;
+$font-family-default: "Karla", sans-serif;
+
+// Base
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: auto;
+  font-family: $font-family-default;
+  font-size: $font-size-default;
+  font-weight: $font-weight-default;
+  background-color: $color-neutral-Light-Gray;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  @media screen and (max-width: 425px) {
+    height: unset;
+    font-size: 14px;
+  }
+}
+
+h2 {
+  font-size: 1.1em;
+  margin-bottom: 12px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  background-color: $color-primary-Bright-Yellow;
+  color: $color-mainBG;
+  border: none;
+  border-radius: 7px;
+  padding: 16px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: 700;
+  color: $color-mainBG;
+  margin-right: 12px;
+}
+
+.card {
+  margin: 32px;
+  overflow: hidden;
+  max-width: 635px;
+  border-radius: 7px;
+  background-color: $color-mainBG;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 15px 30px -15px $color-neutral-Grayish-Blue;
+  &__row {
+    display: flex;
+    @media screen and (max-width: 425px) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    padding: 40px;
+    flex: 1;
+    position: relative;
+    @media screen and (max-width: 425px) {
+      padding: 24px;
+    }
+  }
+}
+
+.join {
+  color: $color-neutral-Grayish-Blue;
+  &__title {
+    color: $color-primary-Cyan;
+    margin-bottom: 25px;
+  }
+  &__subtitle {
+    color: $color-primary-Bright-Yellow;
+  }
+  &__content {
+    line-height: 27px;
+  }
+}
+
+.subscription {
+  background-color: $color-primary-Cyan;
+  color: $color-mainBG;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__signup {
+    width: 100%;
+  }
+  &__price {
+    color: lighten($color: $color-primary-Cyan, $amount: 30);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    margin-bottom: 25px;
+    font-size: $font-size-default;
+  }
+}
+
+.why {
+  background-color: lighten($color: $color-primary-Cyan, $amount: 4);
+  color: $color-mainBG;
+  &__links {
+    list-style: none;
+    & li {
+      color: lighten($color: $color-primary-Cyan, $amount: 50);
+      font-size: 13px;
+      padding: 2.5px;
+    }
+  }
+}
