@@ -1,0 +1,176 @@
+
+:root {
+  --Softblue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --TransparentCyan: hsla(178, 100%, 50%, 30% );
+  --mainBG: hsl(217, 54%, 11%);
+  --cardBG: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+}
+
+html, body {
+  height: 100%;
+  margin: auto;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--mainBG);
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  background-color: var(--cardBG);
+  margin: auto;
+  max-width: 350px;
+  border-radius: 10px;
+  padding: 25px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  margin: auto 25px;
+}
+
+.card__img {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card__img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.card__img-modal {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: var(--TransparentCyan);
+  animation: fadein .5s;
+}
+
+.card__img-modal img {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: calc(50% - 22.5px);
+  left: calc(50% - 22.5px);
+}
+
+.card__img:hover .card__img-modal {
+  display: block;
+  color: var(--Cyan);
+}
+
+@keyframes fadein {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+
+.card__title {
+  color: var(--White);
+  cursor: pointer;
+}
+
+.card__title:hover {
+  color: var(--Cyan);
+  transition: color .5s;
+}
+
+.card__content {
+  color: var(--Softblue);
+  padding-top: 27px;
+}
+
+.card__content > * {
+  padding: 10px 0;
+}
+
+.card__text {
+  font-weight: 300;
+}
+
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.card__info > * {
+  display: flex;
+  flex: 1;
+  height: 20px;
+}
+
+.card__info > * img {
+  margin-right: 5px;
+}
+
+.card__value {
+  color: var(--Cyan);
+  font-weight: 600;
+}
+
+.card__time {
+  justify-content: end;
+}
+
+.card__footer {
+  border-top: 1px solid var(--line);
+  display: flex;
+  padding-top: 15px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.card__avatar-img {
+  max-width: 30px;
+  max-height: 30px;
+  border: 1px solid var(--White);
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.card__avatar {
+  color: var(--White);
+}
+
+.card__avatar:hover {
+  color: var(--Cyan);
+  cursor: pointer;
+  transition: color .5s;
+}
+
+/* If the screen size is 400px wide or less, set the font-size to 16px */
+@media screen and (max-width: 400px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+
+/* If the screen size is 400px wide or less, set the font-size to 16px */
+@media screen and (max-width: 350px) {
+  .card__footer, .card__info {
+    font-size: 12px;
+    line-height: normal;
+  }
+}
