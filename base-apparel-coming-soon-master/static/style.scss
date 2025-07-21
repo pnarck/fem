@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+// Variables
+
+// Colors
+
+// Primary
+$color-Desaturated-Red: rgb(206, 151, 151);
+$color-Soft-Red: hsl(0, 93%, 68%);
+
+// Neutral
+$color-Dark-Grayish-Red: hsl(0, 6%, 24%);
+$color-white: hsl(0, 0%, 100%);
+
+//Gradients
+// Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+// Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+//  background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 100%);
+//  background: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%)100%);
+
+// Typography
+$font-size-default: 16px;
+$font-weight-default: 400;
+$font-family-default: "Josefin Sans", sans-serif;
+
+// Base
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: auto;
+  font-family: $font-family-default;
+  font-size: $font-size-default;
+  font-weight: $font-weight-default;
+  color: $color-Desaturated-Red;
+  background-color: $color-white;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    overflow: unset;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+header {
+  position: absolute;
+  padding-top: 8.12vh;
+  padding-left: 11.45%;
+  z-index: 99;
+  @media screen and (max-width: 768px) {
+    position: relative;
+    padding-top: 31px;
+    padding-left: 32px;
+    padding-bottom: 32px;
+    display: flex;
+  }
+}
+
+.logo {
+  @media screen and (max-width: 768px) {
+    height: 21px;
+  }
+}
+
+// Components
+main {
+  height: 100%;
+  display: flex;
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    height: unset;
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
+
+.content {
+  // background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 100%),
+  // url(../images/bg-pattern-desktop.svg);
+  // background-position: center top;
+  // background-size: 100% 100%;
+  padding-top: 67px;
+  padding-left: 11.51%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%) 0%,
+    hsl(0, 100%, 98%) 100%
+  );
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+    padding-top: 64px;
+    padding-left: 32px;
+    padding-right: 32px;
+    flex: 1;
+    justify-content: flex-start;
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    filter: blur(2px);
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__title {
+    position: relative;
+    z-index: 30;
+    font-size: 4em;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 17px;
+    line-height: 68px;
+    margin-bottom: 21px;
+    @media screen and (max-width: 768px) {
+      font-size: 2.5em;
+      line-height: 1.05em;
+      letter-spacing: 11px;
+    }
+  }
+  &__text {
+    position: relative;
+    z-index: 30;
+    width: 65%;
+    line-height: 28px;
+    margin-bottom: 37px;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      font-size: 0.9em;
+      line-height: 20px;
+      margin-bottom: 35px;
+    }
+  }
+  &__form {
+    position: relative;
+    z-index: 30;
+    width: 66.9%;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+    & input:focus {
+      outline-style: none;
+      border: 1px solid $color-Desaturated-Red;
+      background: transparent;
+    }
+  }
+  &__input-set {
+    position: relative;
+  }
+  &__input {
+    width: 100%;
+    border: 1px solid lighten($color: $color-Desaturated-Red, $amount: 15%);
+    border-radius: 30px;
+    background: transparent;
+    padding: 18px 31px;
+    font-family: $font-family-default;
+    font-size: 1em;
+    display: flex;
+    height: 56px;
+    &::placeholder {
+      color: lighten($color: $color-Desaturated-Red, $amount: 15%);
+      font-family: $font-family-default;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.88em;
+      padding: 14px 23px;
+      height: 48px;
+    }
+  }
+  &__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 30px;
+    background: linear-gradient(
+      135deg,
+      hsl(0, 80%, 86%) 0%,
+      hsl(0, 74%, 74%) 100%
+    );
+    border: 0px;
+    width: 100px;
+    height: 56px;
+    box-shadow: 0px 10px 15px 5px rgba(206, 151, 151, 0.25);
+    transition: all 0.2s ease-in-out;
+    @media screen and (max-width: 768px) {
+      width: 64px;
+      height: 48px;
+    }
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        lighten(hsl(0, 80%, 86%),10%) 0%,
+        lighten(hsl(0, 74%, 74%),10%) 100%
+      );
+      box-shadow: 0px 10px 15px 5px rgba(206, 151, 151, 0.5);
+    }
+  }
+}
+
+.hero {
+  flex: 1;
+  object-fit: cover;
+  @media screen and (max-width: 768px) {
+    display: none;
+    flex: unset;
+  }
+  &--mobile {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.accent {
+  color: $color-Dark-Grayish-Red;
+  font-weight: 600;
+}
+
+.error {
+  border: 2px solid red;
+  position: relative;
+}
+
+.error-icon {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  transform: translateY(-50%) translateX(-50%);
+  @media screen and (max-width: 768px) {
+    right: 60px;
+  }
+}
+
+.error-message {
+  display: none;
+  position: absolute;
+  bottom: -50%;
+  left: 32px;
+  font-size: 0.9em;
+  color: $color-Soft-Red;
+  @media screen and (max-width: 768px) {
+    left: 23px;
+  }
+}
