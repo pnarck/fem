@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --MainText: hsl(193, 38%, 86%); /* LightCyan */
+  --NeonGreen: hsl(150, 100%, 66%);
+  --GrayishBlue: hsl(217, 19%, 38%);
+  --DarkGrayishBlue: hsl(217, 19%, 24%);
+  --MainBG: hsl(218, 23%, 16%); /* DarkBlue */
+}
+
+html,
+body {
+  height: 100%;
+  margin: auto;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--MainText);
+  background-color: var(--MainBG);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  font-size: 1rem;
+  width: 540px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__content {
+  margin-top: 32px;
+  padding: 48px 42px;
+  height: 100%;
+  width: 100%;
+  background-color: var(--DarkGrayishBlue);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__content > * {
+  margin-bottom: 25px;
+}
+
+.card__title {
+  color: var(--NeonGreen);
+  font-size: 0.47rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.card__dice {
+  height: 64px;
+  width: 64px;
+  padding: 20px;
+  background-color: var(--NeonGreen);
+  border-radius: 50%;
+  margin: auto;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card__dice:hover {
+  -webkit-box-shadow: 0px 0px 35px 1px var(--NeonGreen);
+  box-shadow: 0px 0px 35px 1px var(--NeonGreen);
+}
+
+.card__dice--active {
+  animation: InOut 1.8s ease-in-out;
+}
+
+@keyframes InOut {
+  0% {
+    -webkit-box-shadow: 0px 0px 35px 1px var(--NeonGreen);
+    box-shadow: 0px 0px 35px 1px var(--NeonGreen);
+  }
+  100% {
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+  }
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card__divider {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.card__divider > * {
+  margin: auto;
+}
+
+.card__divider--desktop {
+  padding-top: 14px;
+  display: inline;
+}
+
+.card__divider--mobile {
+  display: none;
+}
+
+/* If the screen size is 400px wide or less, set the font-size to 16px */
+@media screen and (max-width: 540px) {
+  html,
+  body {
+    width: 100%;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .card {
+    display: unset;
+    width: 100%;
+    max-height: 300px;
+    margin: 0 16px;
+    margin-top: 120px;
+  }
+  .card__content {
+    margin-top: unset;
+    padding: 41px 24px;
+    border-radius: 10px;
+    height: unset;
+  }
+
+  .card__content > * {
+    margin-bottom: 24px;
+  }
+
+  .card__title {
+    font-size: 0.44rem;
+  }
+
+  .card__divider {
+    margin-bottom: 23px;
+  }
+
+  .card__divider--desktop {
+    display: none;
+  }
+
+  .card__divider--mobile {
+    display: inline;
+  }
+}
