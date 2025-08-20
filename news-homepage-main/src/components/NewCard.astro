@@ -1,0 +1,31 @@
+---
+export interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<li class="article">
+  <h3 class="article__title">{title}</h3>
+  <p>{subtitle}</p>
+</li>
+
+<style scoped>
+  .article {
+    background-color: var(--background-color-alt);
+    padding-top: 1.8rem;
+    padding-bottom: 2rem;
+    cursor: pointer;
+  }
+  .article__title {
+    color: var(--background-color);
+    font-size: 1.35rem;
+    transition: all 0.15s ease-in-out;
+    margin-bottom: 0.5rem;
+  }
+  .article:hover .article__title {
+    color: var(--hover-color-alt);
+  }
+</style>

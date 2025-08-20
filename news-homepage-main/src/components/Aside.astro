@@ -1,0 +1,58 @@
+---
+import NewCard from "./NewCard.astro";
+---
+
+<aside>
+  <h2 class="title">New</h2>
+  <ul class="articles">
+    <NewCard
+      title="Hydrogen VS Electric Cars"
+      subtitle="Will hydrogen-fueled cars ever catch up to EVs?"
+    />
+    <hr />
+    <NewCard
+      title="The Downsides of AI Artistry"
+      subtitle="What are the possible adverse effects of on-demand AI image generation?"
+    />
+    <hr />
+    <NewCard
+      title="Is VC Funding Drying Up?"
+      subtitle="Private funding by VC firms is down 50% YOY. We take a look at what that means."
+    />
+  </ul>
+</aside>
+
+<style scoped>
+  aside {
+    background-color: var(--background-color-alt);
+    color: var(--text-color-alt);
+    padding: 0 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .title {
+    color: var(--heading-color-alt);
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 2.9rem;
+    padding-top: 1.3rem;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--text-color-alt);
+    margin: 0;
+    height: 1px;
+  }
+  @media screen and (min-width: 1024px) {
+    aside {
+      min-width: 350px;
+      margin-bottom: unset;
+    }
+    .title {
+      color: var(--heading-color-alt);
+      font-size: 2.65rem;
+      font-weight: 700;
+      line-height: 2.9rem;
+      padding-top: 2.1rem;
+    }
+  }
+</style>

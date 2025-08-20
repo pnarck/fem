@@ -1,0 +1,104 @@
+/* Fonts */
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-weight: 400 800;
+}
+
+/* Variables */
+
+:root {
+  --font-main: Inter, sans-serif;
+  --font-secondary: Inter, sans-serif;
+  --font-scale: 15px;
+
+  --background-color: hsl(36, 100%, 99%);
+  --background-color-alt: hsl(240, 100%, 5%);
+  --heading-color: hsl(240, 100%, 5%);
+  --heading-color-alt: hsl(35, 77%, 62%);
+  --text-color: hsl(236, 13%, 42%);
+  --text-color-alt: hsl(233, 8%, 79%);
+  --link-color: hsl(236, 13%, 42%);
+  --hover-color: hsl(5, 85%, 63%);
+  --hover-color-alt: hsl(35, 77%, 62%);
+  --accent-color: hsl(5, 85%, 63%);
+  --list-color: hsl(233, 8%, 79%);
+}
+
+/* Base */
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: var(--font-scale);
+}
+
+/* Components */
+
+body {
+  font-family: var(--font-secondary);
+  font-size: var(--font-scale);
+  margin: auto;
+  padding: 16px;
+  max-width: var(--width);
+  text-align: left;
+  background-color: var(--background-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.58;
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-main);
+  color: var(--heading-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--link-color);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+strong,
+b {
+  color: var(--heading-color);
+}
+
+button {
+  margin: 0;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.title:hover {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    padding: 5.8rem 11rem;
+  }
+}

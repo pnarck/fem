@@ -1,0 +1,69 @@
+---
+import Aside from "../components/Aside.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import HeroArticle from "../components/HeroArticle.astro";
+import PreviewCard from "../components/PreviewCard.astro";
+
+import RetroPcs from "../assets/images/image-retro-pcs.jpg";
+import TopLaptops from "../assets/images/image-top-laptops.jpg";
+import GamingGrowth from "../assets/images/image-gaming-growth.jpg";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title="Frontend Mentor | News homepage" />
+  </head>
+  <body>
+    <Header />
+    <div class="wrapper">
+      <HeroArticle />
+      <Aside />
+    </div>
+    <div class="preview-cards">
+      <PreviewCard
+        number="01"
+        illustration={RetroPcs}
+        title="Reviving Retro PCs"
+        subtitle="What happens when old PCs are given modern upgrades?"
+      />
+      <PreviewCard
+        number="02"
+        illustration={TopLaptops}
+        title="Top 10 Laptops of 2022"
+        subtitle="Our best picks for various needs and budgets."
+      />
+      <PreviewCard
+        number="03"
+        illustration={GamingGrowth}
+        title="The Growth of Gaming"
+        subtitle="How the pandemic has sparked fresh opportunities."
+      />
+    </div>
+    <style scoped>
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 4.3rem;
+      }
+      .preview-cards {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      @media screen and (min-width: 1024px) {
+        .wrapper {
+          flex-direction: row;
+          gap: 2rem;
+        }
+        .preview-cards {
+          margin-top: 4.8rem;
+          flex-direction: row;
+        }
+      }
+    </style>
+  </body>
+</html>

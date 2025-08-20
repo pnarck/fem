@@ -1,0 +1,136 @@
+---
+import hamburger from "../assets/images/icon-menu.svg";
+import close from "../assets/images/icon-menu-close.svg";
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<header>
+  <div class="logo">
+    <img src="/logo.svg" alt="Logo" />
+  </div>
+  <div class="hamburger">
+    <img src={hamburger} alt="Hamburger menu" />
+  </div>
+  <nav>
+    <div class="nav-links">
+      <div class="close">
+        <img src={close} alt="Close menu" />
+      </div>
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="#">New</HeaderLink>
+      <HeaderLink href="#">Popular</HeaderLink>
+      <HeaderLink href="#">Trending</HeaderLink>
+      <HeaderLink href="#">Categories</HeaderLink>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const nav = document.querySelector("nav");
+  const hamburger = document.querySelector(".hamburger");
+  const close = document.querySelector(".close");
+  hamburger.addEventListener("click", (e) => {
+    expand();
+  });
+  close.addEventListener("click", (e) => {
+    expand();
+  });
+  const expand = () => {
+    nav.classList.toggle("expanded");
+  };
+</script>
+
+<style>
+  header {
+    margin: 0.8em 0 2em;
+    display: flex;
+    place-items: center;
+    place-content: space-between;
+  }
+
+  .logo {
+    width: 46px;
+  }
+
+  .hamburger,
+  .close {
+    position: relative;
+    cursor: pointer;
+  }
+  .close {
+    text-align: right;
+    margin-bottom: 5.1rem;
+  }
+
+  nav {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    right: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+  nav a {
+    font-size: 1.075rem;
+    margin-left: 2.245rem;
+  }
+
+  .nav-links {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 68%;
+    height: 100%;
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .expanded {
+    display: block;
+  }
+
+  @media screen and (min-width: 1024px) {
+    header {
+      margin: 0em 0 3.35em;
+    }
+    .logo {
+      width: unset;
+    }
+    nav {
+      display: block;
+      position: unset;
+      z-index: unset;
+      right: unset;
+      top: unset;
+      width: unset;
+      height: unset;
+      background-color: unset;
+    }
+    .nav-links {
+      display: block;
+      position: unset;
+      right: unset;
+      top: unset;
+      width: unset;
+      height: unset;
+      padding: unset;
+      flex-direction: unset;
+      gap: unset;
+    }
+
+    .nav-links a {
+      display: inline-block;
+    }
+
+    .hamburger,
+    .close {
+      display: none;
+    }
+  }
+</style>
